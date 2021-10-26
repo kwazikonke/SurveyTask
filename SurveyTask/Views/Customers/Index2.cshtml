@@ -1,0 +1,76 @@
+﻿@model IEnumerable<SurveyTask.Models.Customer>
+
+@{
+    ViewBag.Title = "Index2";
+}
+
+<br />
+
+<h3> Results: </h3>
+<hr />
+@foreach (var item in Model)
+{
+
+    <tr>
+        <td>
+            <p>Total Number of surveys: @Model.Count()</p>
+        </td>
+
+        <td>
+            <p> Average Age :@Html.DisplayName(item.Avarage().ToString())</p>
+        </td>
+
+        <td>
+            <p>Oldest person who participated in a survey: @Html.DisplayName(item.Old().ToString())</p>
+        </td>
+
+        <td>
+            <p>Youngest person who participated in a survey: @Html.DisplayName(item.Young().ToString())</p>
+        </td>
+        <td>
+            <p>
+                <hr />
+            </p>
+        </td>
+        <td>
+            <p> Percentage of People who like Pizza :@Html.DisplayName(item.Calc().ToString())</p>
+        </td>
+
+        <td>
+            <p> Percentage of People who like Pasta :@Html.DisplayName(item.Calc().ToString())</p>
+        </td>
+
+        <td>
+            <p>Percentage of People who like Pap and Wors :@Html.DisplayName(item.Calc().ToString())</p>
+        </td>
+        <td>
+            <p>
+                <hr />
+            </p>
+        </td>
+        <td>
+            <p>People like to eat out :</p>
+        </td>
+
+        <td>
+            <p>People like to watch movies :</p>
+        </td>
+
+        <td>
+            <p>People like to watch TV :</p>
+        </td>
+
+        <td>
+            <p>People like to listen to radio :</p>
+            <br />
+            <hr />
+        </td>
+
+        @*<td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>*@
+    </tr>
+    
+}

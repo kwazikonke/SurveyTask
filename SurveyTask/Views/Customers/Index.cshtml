@@ -1,0 +1,112 @@
+﻿@model IEnumerable<SurveyTask.Models.Customer>
+
+<br/>
+<h3>Survey Results</h3>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pizza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pasta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PapandWors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChickenStirfry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeefStirFry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firstQ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecQ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thirdQ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.forthQ)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pizza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pasta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PapandWors)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChickenStirfry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeefStirFry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstQ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecQ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.thirdQ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.forthQ)
+        </td>
+      
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

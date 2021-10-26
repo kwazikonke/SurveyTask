@@ -1,0 +1,146 @@
+﻿@model SurveyTask.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pizza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pizza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pasta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pasta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PapandWors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PapandWors)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChickenStirfry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChickenStirfry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BeefStirFry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BeefStirFry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.firstQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thirdQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thirdQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.forthQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.forthQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Answer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Answer)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

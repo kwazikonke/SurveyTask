@@ -1,0 +1,228 @@
+﻿@model SurveyTask.Models.Customer
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>You are requested to take our survey</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ContactNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ContactNumber, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <hr />
+
+    <h5>What is your favourite food? (You can choose more than 1 answer)</h5>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Pizza, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.ValidationMessageFor(model => model.Pizza, "", new { @class = "text-danger" })
+                @Html.CheckBoxFor(model => model.Pizza)
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Pasta, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.CheckBoxFor(model => model.Pasta)
+                @Html.ValidationMessageFor(model => model.Pasta, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PapandWors, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.CheckBoxFor(model => model.PapandWors)
+                @Html.ValidationMessageFor(model => model.PapandWors, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ChickenStirfry, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.CheckBoxFor(model => model.ChickenStirfry)
+                @Html.ValidationMessageFor(model => model.ChickenStirfry, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BeefStirFry, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.CheckBoxFor(model => model.BeefStirFry)
+                @Html.ValidationMessageFor(model => model.BeefStirFry, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Other, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.CheckBoxFor(model => model.Other, new { @class = "checkbox", id = "2" })
+                @Html.ValidationMessageFor(model => model.Other, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <h5>On a scale of 1 to 5 indicate whether you strongly agree to strongly disagree</h5>
+    <br />
+    <div class="row">
+        <table class="table table-striped">
+            <tr>
+                <th width="0"></th>
+                <td width="50px">Strongly Agree(1)</td>
+                <td width="50px">Agree(2)</td>
+                <td width="50px">Neutral(3)</td>
+                <td width="50px">Disagree(4)</td>
+                <td width="50px">Strongly Disagree(5)</td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.LabelFor(model => model.firstQ, htmlAttributes: new { @class = "control-label col-md-2" })
+                </th>
+                <td>
+                    @Html.RadioButtonFor(m => m.firstQ, "Strongly Agree", new { @class = "js-radio", id = "1" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.firstQ, "Agree", new { @class = "js-radio", id = "2" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.firstQ, "Neutral", new { @class = "js-radio", id = "3" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.firstQ, "Disagree", new { @class = "js-radio", id = "4" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.firstQ, "Strongly Disagree", new { @class = "js-radio", id = "5" })
+                </td>
+                @Html.ValidationMessageFor(model => model.firstQ, "", new { @class = "text-danger" })
+            </tr>
+
+            <tr>
+                <th>@Html.LabelFor(model => model.SecQ, htmlAttributes: new { @class = "control-label col-md-2" }) </th>
+                <td>
+                    @Html.RadioButtonFor(m => m.SecQ, "Strongly Agree", new { @class = "js-radio", id = "1" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.SecQ, "Agree", new { @class = "js-radio", id = "2" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.SecQ, "Neutral", new { @class = "js-radio", id = "3" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.SecQ, "Disagree", new { @class = "js-radio", id = "4" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.SecQ, "Strongly Disagree", new { @class = "js-radio", id = "5" })
+                </td>
+                @Html.ValidationMessageFor(model => model.SecQ, "", new { @class = "text-danger" })
+            </tr>
+
+            <tr>
+                <th>@Html.LabelFor(model => model.thirdQ, htmlAttributes: new { @class = "control-label col-md-2" }) </th>
+                <td>
+                    @Html.RadioButtonFor(m => m.thirdQ, "Strongly Agree", new { @class = "js-radio", id = "1" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.thirdQ, "Agree", new { @class = "js-radio", id = "2" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.thirdQ, "Neutral", new { @class = "js-radio", id = "3" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.thirdQ, "Disagree", new { @class = "js-radio", id = "4" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.thirdQ, "Strongly Disagree", new { @class = "js-radio", id = "5" })
+                </td>
+                @Html.ValidationMessageFor(model => model.thirdQ, "", new { @class = "text-danger" })
+            </tr>
+
+            <tr>
+                <th>@Html.LabelFor(model => model.forthQ, htmlAttributes: new { @class = "control-label col-md-2" }) </th>
+                <td>
+                    @Html.RadioButtonFor(m => m.forthQ, "Strongly Agree", new { @class = "js-radio", id = "1" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.forthQ, "Agree", new { @class = "js-radio", id = "2" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.forthQ, "Neutral", new { @class = "js-radio", id = "3" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.forthQ, "Disagree", new { @class = "js-radio", id = "4" })
+                </td>
+                <td>
+                    @Html.RadioButtonFor(m => m.forthQ, "Strongly Disagree", new { @class = "js-radio", id = "5" })
+                </td>
+                @Html.ValidationMessageFor(model => model.forthQ, "", new { @class = "text-danger" })
+            </tr>
+        </table>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+
+  </div>
+</div>
+  }
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+    </div>*@
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
